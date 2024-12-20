@@ -1,0 +1,18 @@
+Solution 1 (state 13)
+states: 14  rewrites: 459 in 0ms cpu (0ms real) (481132 rewrites/second)
+I/O:I/O --> "a = 1, b = 0\n"
+"Final simulation time: 0"
+
+Solution 2 (state 14)
+states: 15  rewrites: 515 in 1ms cpu (1ms real) (500485 rewrites/second)
+I/O:I/O --> "a = 1, b = 1\n"
+"Final simulation time: 0"
+
+Solution 3 (state 17)
+states: 18  rewrites: 596 in 1ms cpu (1ms real) (501683 rewrites/second)
+I/O:I/O --> "a = 1, b = 0\n"
+"a = 1, b = 1\n"
+"Final simulation time: 0"
+
+No more solutions.
+states: 18  rewrites: 596 in 1ms cpu (1ms real) (492561 rewrites/second)

@@ -1,0 +1,33 @@
+#! /opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/bin/vvp
+:ivl_version "13.0 (devel)" "(s20221226-211-ga21be045a)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/HEAD-a21be04/lib/ivl/v2009.vpi";
+S_0x11df041c0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x11df04330 .scope module, "top" "top" 3 7;
+ .timescale 0 0;
+L_0x110040010 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x110040058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+RS_0x110008010 .resolv tri, L_0x110040010, L_0x110040058;
+v0x60000259c090_0 .net8 "foo", 0 0, RS_0x110008010;  2 drivers
+S_0x11df044a0 .scope module, "mod" "mod" 3 11, 3 1 0, S_0x11df04330;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "foo";
+v0x60000259c000_0 .net8 "foo", 0 0, RS_0x110008010;  alias, 2 drivers
+    .scope S_0x11df04330;
+T_0 ;
+    %vpi_call/w 3 13 "$monitor", v0x60000259c090_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "dir.sv";
