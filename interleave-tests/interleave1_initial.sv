@@ -17,10 +17,15 @@ Mentor Questa:
 before: i = x, v = xxxxxxxxxx, v(arr) = xxxxxxxxxx, n = xxxx, n(arr) = xxxx
 after:  i = 1, v = xxxxxxxxxx, v(arr) = xxxxxxxxxx, n = xxxx, n(arr) = xxxx
 
-Synopsys VCS:
+Synopsys VCS 2021:
 
 before: i = x, v = xxxxxxxxxx, v(arr) = xxxxxxxxxx, n = xxxx, n(arr) = xxxx
 after:  i = 1, v = 01xxx1xx01, v(arr) = 01xxxxxx01, n = 0101, n(arr) = 0101
+
+Synopsys VCS 2023:
+
+before: i = x, v = xxxxxxxxxx, v(arr) = xxxxxxxxxx, n = xxxx, n(arr) = xxxx
+after:  i = 1, v = 01x1x1xx01, v(arr) = 01x1xxxx01, n = 0101, n(arr) = 0101
 
 Icarus:
 
@@ -33,13 +38,16 @@ after:  i = 1, v = xxxxxxxxx1, v(arr) = xxzzzzzzx1, n = xxx1, n(arr) = xxx1
 
 Observations:
 
-Riviera only interleaves one case: buf gate, but only for variables, not for nets.
+Riviera only interleaves one case: the buf gate, but only for variables, not for nets.
 
 Xcelium and Questa do not interleave anything.
 
-Synopsys interleaves all continuous assignments and gate assignments (for both variables and nets).
-Interestingly, the simple always@(*) assignment (but not the initial or always_comb assignments)
-is interleaved in the scalar case but not the array case...
+VCS interleaves the following:
+
+ * All continuous assignments and gate assignments (for both variables and nets).
+ * The simple always_comb assignment is interleaved in VCS 2023 but not in VCS 2021.
+ * In both versions of the simulator, the simple always@(*) assignment is interleaved
+   in the scalar case but not the array case.
 
 Icarus only interleaves the simple continuous assignment (for both variables and nets).
 
